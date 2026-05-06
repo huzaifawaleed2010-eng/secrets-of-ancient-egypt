@@ -1,0 +1,1514 @@
+.back-floating-btn {
+    position: left;
+    top: 100px; /* تحت الناف بار الثابت بتاعك */
+    right: 20px;
+    background-color: rgba(212, 175, 55, 0.1); /* ذهبي شفاف جداً */
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 50px; /* خليه بيضاوي أو دائري */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.4s ease;
+    z-index: 1001; /* أعلى من الناف بار والكروت */
+    backdrop-filter: blur(5px); /* تأثير زجاجي للملفات الحديثة */
+}
+
+/* الأيقونة فقط هي اللي تظهر في الأول */
+.back-floatingg-btn .text {
+    display: none; 
+    font-size: 14px;
+}
+
+/* لما المستخدم يقرب الماوس، الزرار يوسع ويظهر الكلام */
+.back-floatingg-btn:hover {
+    background-color: #d4af37;
+    color: #1a1a1a;
+    padding: 10px 25px;
+}
+
+.back-floatingg-btn:hover .text {
+    display: inline;
+}
+
+.back-floatingg-btn .arrow {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.back-floating-btn:hover .arrow {
+    transform: translateX(5px); /* السهم بيتحرك لليمين كأنه بيزقك ترجع */
+}
+
+.arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    font-size: 22px;
+}
+
+
+/* الحاوية الكبيرة */
+.museum-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+    padding: 40px;
+    background-color: #f1d5a5; /* لون الخلفية اللي انت مختاره */
+}
+
+/* الكارد نفسه */
+.artifact-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    overflow: hidden; /* عشان الصورة ما تخرجش بره الحواف المنحنية */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.artifact-card:hover {
+    transform: translateY(-10px); /* حركة شياكة لما تقف عليه */
+}
+
+/* الصندوق اللي جواه الصورة - هو ده اللي بيحكم المقاس */
+.artifact-image-box {
+    width: 100%;
+    height: 400px; /* ثبت الرقم ده.. ده اللي هيخلي كل الصور مقاس واحد */
+    overflow: hidden;
+    background-color: #eee; /* لون خلفية خفيف لو الصورة حملت متأخر */
+}
+
+/* الصورة نفسها جوه الصندوق */
+.artifact-image-box img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover; /* السحر هنا: بيملا المربع ويقص الزيادات بانتظام */
+    object-position: center; /* بيخلي نص الصورة هو اللي باين */
+}
+
+/* النصوص تحت الصورة */
+.artifact-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.artifact-info h3 {
+    margin: 0 0 10px 0;
+    color: #000000; 
+    font-size: 1.2rem;
+}
+
+.artifact-info p {
+    font-size: 0.9rem;
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* الخلفية الأساسية */
+.dev-profile-section {
+    background: #1a1a1a; /* أسود هادي */
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+    padding: 20px;
+}
+
+/* الحاوية */
+.dev-container {
+    display: flex;
+    flex-direction: row-reverse; /* الصورة يمين والكلام شمال */
+    background: #252525;
+    max-width: 900px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* صندوق الصورة */
+.dev-avatar-box {
+    flex: 1;
+    background: #f1d5a5; /* اللون البيج بتاعك عشان نربط التصميم */
+}
+
+.dev-avatar-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(30%); /* لمشة درامية */
+}
+
+/* صندوق المعلومات */
+.dev-bio-card {
+    flex: 1.5;
+    padding: 50px;
+}
+
+.dev-tag {
+    background: #f1d5a5;
+    color: #1a1a1a;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.dev-name {
+    margin: 20px 0;
+    font-size: 2.5rem;
+    color: #f1d5a5;
+}
+
+.dev-description {
+    line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+/* المهارات */
+.dev-skills-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.skill-chip {
+    border: 1px solid #444;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+}
+
+/* الموبايل */
+@media (max-width: 768px) {
+    .dev-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .dev-skills-row {
+        justify-content: center;
+    }
+}
+
+.link-gold {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 1px solid #f1d5a5;
+    color: #f1d5a5;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.4s ease;
+    background: transparent;
+}
+
+.link-gold:hover {
+    background: #f1d5a5;
+    color: #1a1a1a;
+    box-shadow: 0 0 15px rgba(241, 213, 165, 0.4);
+}
+
+
+/* الكلاس ده هيخفي الكروت اللي لسه مجاش دورها */
+.hidden-card {
+    display: none !important;
+}
+
+/* تنسيق زرار "عرض المزيد" */
+.load-more-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 40px;
+    background-color: #e2a234;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.load-more-btn:hover {
+    transform: scale(1.05);
+    background-color: #5c4827;
+    color: #fff;
+}
+/* حاوية البحث في المنيو */
+.nav-search-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    padding: 5px;
+    transition: all 0.5s ease;
+}
+
+/* الأيقونة */
+.search-icon-trigger {
+    background: none;
+    border: none;
+    color: #f1d5a5;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+/* الـ Input المخفي */
+.search-input-dynamic {
+    width: 0; /* مخفي في البداية */
+    border: none;
+    outline: none;
+    background: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: width 0.5s ease; /* سرعة التطويل */
+    padding: 0;
+}
+
+/* لما نلمس الحاوية (Hover) */
+.nav-search-box:hover .search-input-dynamic {
+    width: 200px; /* العرض اللي هيوصل له لما يطول */
+    padding: 0 10px;
+}
+
+/* لون الـ Placeholder */
+.search-input-dynamic::placeholder {
+    color: #b1b0ab;
+}
+
+.search-img {
+    width: 20px;  /* تحكم في مقاس العدسة من هنا */
+    height: 20px;
+    object-fit: contain;
+    /* لو الأيقونة لونها أسود وعايز تخليها ذهبي بالـ CSS جرب السطر ده: */
+    /* filter: sepia(1) saturate(5) hue-rotate(10deg); */
+    color: #eea830;
+}
+
+.search-icon-trigger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+/* حركة الأنيميشن عند اللمس */
+.search-icon-trigger:hover .search-img {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+.search-img {
+    width: 22px;
+    height: 22px;
+    
+    /* الخلطة دي بتحول الأسود للون ذهبي يقارب #f1d5a5 */
+    filter: invert(85%) sepia(21%) saturate(735%) hue-rotate(323deg) brightness(101%) contrast(91%);
+    
+    transition: all 0.3s ease;
+}
+
+/* لو عايز اللون يزهزه أكتر لما تقف عليها بالماوس */
+.search-icon-trigger:hover .search-img {
+    filter: invert(100%) sepia(0%) saturate(0%) brightness(105%); /* تقلب أبيض شاهق */
+    transform: scale(1.1);
+}
+
+.search-icon-trigger {
+    background: none;
+    border: none;
+    color: #f1d5a5; /* اللون الذهبي بتاعك */
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.search-icon-trigger:hover {
+    transform: scale(1.2); /* تكبر شوية لما تقف عليها */
+    color: #fff; /* تقلب أبيض */
+}
+
+.auth-btn {
+    padding: 8px 20px;
+    border: 1px solid #f1d5a5;
+    color: #f1d5a5;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.auth-btn:hover {
+    background: #f1d5a5;
+    color: #1a1a1a;
+}
+
+.gold-text {
+    color: #f1d5a5;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.nav-links-design {
+    background: #70642c;
+    color: #1a1a1a;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+
+.hero-section-design {
+    background: #70642c;
+    color: #1a1a1a;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.hero-section-design a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+    font-weight: 500;
+
+}
+
+.hero-section-design a:hover {
+    color: #d4af37;
+}
+
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #d4af37;
+}
+
+/* تنسيق بسيط جداً للموبايل */
+@media (max-width: 600px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+}
+
+
+.mystery-section {
+    padding: 97px 20px;
+    background: #121212; /* أغمق شوية عشان يبرز الدهبي */
+    text-align: center;
+}
+
+.section-title {
+    color: #f1d5a5;
+    font-size: 2.8rem;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+}
+
+.info-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.info-card {
+    background: #1e1e1e;
+    border: 1px solid rgba(241, 213, 165, 0.4);
+    padding: 60px;
+    border-radius: 30px;
+    min-height: 320px; /* طول مناسب لـ 6 سطور */
+    flex: 1;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-header {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#info-icon { font-size: 3.5rem; color: #f1d5a5; }
+#info-category { color: #f1d5a5; opacity: 0.7; font-size: 1rem; text-transform: uppercase; }
+
+#info-text {
+    color: #ffffff;
+    font-size: 1.25rem;
+    line-height: 1.9;
+    text-align: justify;
+    margin: 0;
+}
+
+/* أزرار التنقل */
+.nav-btn {
+    background: transparent;
+    border: 2px solid #f1d5a5;
+    color: #f1d5a5;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-btn:hover {
+    background: #f1d5a5;
+    color: #121212;
+    transform: scale(1.1);
+}
+
+/* نقاط المؤشر */
+.dots-wrapper {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: #333;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.dot.active {
+    background: #f1d5a5;
+    width: 30px;
+    border-radius: 10px;
+}
+
+/* أنيميشن الظهور */
+.fade-in { animation: smoothShow 0.8s ease-out; }
+@keyframes smoothShow {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.nav-btn {
+    background: transparent;
+    border: 2px solid #f1d5a5; /* اللون الذهبي الفاتح من الصورة */
+    color: #f1d5a5;
+    width: 60px; /* العرض */
+    height: 60px; /* الطول */
+    border-radius: 50%; /* عشان تبقى دائرة */
+    cursor: pointer;
+    transition: 0.4s;
+    
+    /* توسيط الأيقونة بـ Flexbox */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* تأثير عند الوقوف على الزرار */
+.nav-btn:hover {
+    background: #f1d5a5;
+    color: #121212;
+    transform: scale(1.05); /* تكبير بسيط */
+}
+
+/* تعديل حجم الأيقونة جوه الزرار */
+.nav-btn i {
+    font-size: 1.5rem; /* حجم السهم */
+}
+
+.achievements-section {
+    padding: 80px 20px;
+    background-color: #0f0f0f;
+    text-align: center;
+}
+
+.achievements-grid {
+    display: grid;
+    /* بيقسم الشاشة لـ 4 أعمدة في الشاشات الكبيرة و 2 في المتوسطة */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.stat-card {
+    background: #1a1a1a;
+    border: 1px solid #f1d5a5; /* اللون الذهبي */
+    padding: 40px 20px;
+    border-radius: 15px;
+    transition: all 0.4s ease;
+    cursor: default;
+}
+
+/* تأثير عند مرور الماوس */
+.stat-card:hover {
+    transform: translateY(-10px);
+    background: #f1d5a5; /* يقلب ذهبي */
+    box-shadow: 0 10px 30px rgba(241, 213, 165, 0.3);
+}
+
+.stat-card i {
+    font-size: 2.5rem;
+    color: #f1d5a5;
+    margin-bottom: 20px;
+}
+
+.stat-card:hover i, 
+.stat-card:hover .stat-number, 
+.stat-card:hover .stat-desc {
+    color: #000; /* يقلب أسود لما الخلفية تبقى ذهبي */
+}
+
+.stat-number {
+    font-size: 2.2rem;
+    color: #fff;
+    margin: 10px 0;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+.stat-desc {
+    color: #aaa;
+    font-size: 1rem;
+}
+
+.about-section {
+    padding: 100px 20px;
+    background-color: #111; /* أسود ملكي */
+    color: #fff;
+}
+
+.flex-about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap; /* عشان الموبايل */
+}
+
+.about-content {
+    flex: 1;
+    min-width: 300px;
+    text-align: right; /* محاذاة لليمين عشان العربي */
+}
+
+.section-title {
+    padding-top: 90px !important; /* زق المحتوى لتحت عشان يبعد عن الـ Nav */
+    color: #000000;
+    width: 100%;             /* يضمن إنه واخد عرض الصفحة كامل */
+    text-align: center;      /* يخلي النص في النص بالظبط */
+    margin: 40px 0;          /* مسافة فوق وتحت العنوان */
+    font-size: 3rem;         /* حجم كبير وواضح */
+    display: block;          /* يضمن إنه واخد سطر لوحده */
+}
+
+
+.about-text {
+    line-height: 1.8;
+    color: #ccc;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+}
+
+.features-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #f1d5a5;
+    font-weight: bold;
+}
+
+.features-list i {
+    font-size: 1.2rem;
+}
+
+/* تنسيق الصورة */
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    min-width: 300px;
+}
+
+.image-border {
+    border: 5px solid #f1d5a5;
+    padding: 15px;
+    border-radius: 20px;
+    position: relative;
+    transition: transform 0.5s ease;
+}
+
+.image-border:hover {
+    transform: rotate(2deg) scale(1.05);
+}
+
+.image-border img {
+    max-width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+.why-us-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.why-card {
+    background: linear-gradient(145deg, #1a1a1a, #222);
+    padding: 30px;
+    border-radius: 15px;
+    border-bottom: 3px solid #f1d5a5; /* خط دهبي من تحت */
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.why-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(241, 213, 165, 0.2);
+    background: #1e1e1e;
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    background: #f1d5a5;
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.5rem;
+}
+
+.why-card h3 {
+    color: #f1d5a5;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.why-card p {
+    color: #999;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.cta-container {
+    text-align: center;
+    margin-top: 60px;
+    padding-bottom: 20px;
+}
+
+.discover-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 45px;
+    background-color: transparent;
+    border: 2px solid #f1d5a5;
+    color: #f1d5a5;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* تأثير الامتلاء باللون الذهبي عند الوقوف عليه */
+.discover-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #f1d5a5;
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.discover-btn:hover {
+    color: #000; /* يقلب أسود عشان يظهر فوق الذهبي */
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(241, 213, 165, 0.5);
+}
+
+.discover-btn:hover::before {
+    width: 100%;
+}
+
+.discover-btn i {
+    font-size: 1.1rem;
+    transition: transform 0.4s ease;
+}
+
+.discover-btn:hover i {
+    transform: translateX(-8px); /* السهم يتحرك حركة بسيطة تشجع على الضغط */
+}
+
+.royal-footer {
+    background-color: #0a0a0a; /* أسود أغمق من باقي الموقع */
+    padding: 60px 20px 20px;
+    border-top: 2px solid #f1d5a5; /* خط ذهبي يفصل الفوتر */
+    color: #fff;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    color: #f1d5a5;
+    font-size: 2rem;
+    font-family: 'serif';
+    margin-bottom: 15px;
+}
+
+.passion-text {
+    line-height: 1.8;
+    color: #bbb;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+/* تصميم زرار المطور */
+.dev-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 30px;
+    border: 1px solid #f1d5a5;
+    color: #f1d5a5;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.dev-btn:hover {
+    background-color: #f1d5a5;
+    color: #000;
+    box-shadow: 0 0 15px rgba(241, 213, 165, 0.4);
+    transform: translateY(-3px);
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #f1d5a5;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+.social-icons img {
+    color: #f1d5a5;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+
+.social-icons a:hover {
+    color: #fff;
+    transform: scale(1.2);
+}
+.social-icons img:hover {
+    color: #fff;
+    transform: scale(1.2);
+}
+
+
+/* الحقوق في الأسفل */
+.footer-bottom {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* 0000000000000000000 */
+
+.hero-card {
+    height: 820px; /* بتاخد طول الشاشة بالكامل */
+    background: url('photo/hero-bg.jpg') no-repeat center center/cover; /* حط صورة فخمة هنا */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* طبقة سوداء شفافة عشان الكلام يبان */
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.welcome-badge {
+    background: rgba(241, 213, 165, 0.2);
+    border: 1px solid #f1d5a5;
+    color: #f1d5a5;
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.hero-title {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-family: 'serif';
+}
+
+.gold-text { color: #f1d5a5; }
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* أزرار الأكشن */
+.hero-btns {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.main-btn {
+    background: #f1d5a5;
+    color: #000;
+    padding: 15px 35px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.outline-btn {
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.main-btn:hover, .outline-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* حركة السهم النازل */
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    font-size: 2rem;
+    color: #f1d5a5;
+    animation: bounce 2s infinite;
+    z-index: 2;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+.hero-content {
+    animation: fadeInUp 1.5s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* عشان السهم ميبقاش تحته خط أزرق بتاع اللينكات */
+.scroll-down a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.royal-footer {
+    background: #050505; /* أسود أعمق */
+    padding: 60px 0 20px;
+    border-top: 3px solid #f1d5a5;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 40px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.gold-title {
+    color: #f1d5a5;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* خط صغير تحت العنوان */
+.gold-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 50px; height: 2px;
+    background: #f1d5a5;
+}
+
+.footer-column p {
+    line-height: 1.8;
+    color: #ccc;
+    font-size: 0.95rem;
+}
+
+/* روابط القائمة */
+.footer-column ul { list-style: none; padding: 0; }
+.footer-column ul li { margin-bottom: 12px; }
+.footer-column ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.footer-column ul li a:hover { color: #f1d5a5; padding-right: 10px; }
+
+/* زرار المطور الجديد */
+.dev-card-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: 1px solid #f1d5a5;
+    color: #f1d5a5;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: 0.4s;
+}
+.dev-card-btn:hover {
+    background: #f1d5a5;
+    color: #000;
+}
+
+/* السوشيال ميديا */
+.social-icons { display: flex; gap: 15px; margin-top: 20px; }
+.social-icons a {
+    width: 35px; height: 35px;
+    border: 1px solid #333;
+    display: flex; align-items: center; justify-content: center;
+    color: #f1d5a5; text-decoration: none; border-radius: 50%;
+    transition: 0.3s;
+}
+.social-icons img {
+    width: 35px; height: 35px;
+    border: 1px solid #333;
+    display: flex; align-items: center; justify-content: center;
+    background:#f1d5a5 ;
+    color: #f1d5a5; text-decoration: none; border-radius: 50%;
+    transition: 0.3s;
+}
+
+.social-icons a:hover { background: #f1d5a5; color: #000; border-color: #f1d5a5; }
+.social-icons img:hover {background: #f1d5a5; color: #000; border-color: #f1d5a5;}
+/* تأثير القلب النابض */
+.pulse { color: #ff4d4d; animation: heart-beat 1s infinite; }
+@keyframes heart-beat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.footer-copyright {
+    text-align: center;
+    margin-top: 50px;
+    border-top: 1px solid #1a1a1a;
+    padding-top: 20px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* 1. الحاوية الأساسية للعصور */
+.eras-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* تقسيم الصفحة لنصفين بالتساوي */
+    gap: 50px; /* مسافة مريحة بين الكارتين */
+    padding: 60px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #080808; /* خلفية الصفحة السوداء */
+}
+
+/* 2. تصميم الكارت العريض (Wide Card) */
+.eras-card-wide {
+    background: #111; /* خلفية الكارت أفتح قليلاً */
+    border-radius: 30px;
+    padding: 25px;
+    border: 1px solid rgba(241, 213, 165, 0.1); /* برواز ذهبي خافت جداً */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* تأثير عند الوقوف بالماوس (Hover) */
+.eras-card-wide:hover {
+    transform: translateY(-15px);
+    border-color: #f1d5a5; /* البرواز ينور ذهبي */
+    box-shadow: 0 20px 50px rgba(241, 213, 165, 0.1); /* توهج ذهبي خفيف */
+}
+
+/* 3. تنسيق الصورة داخل الكارت */
+.eras-image {
+    position: relative;
+    width: 100%;
+    height: 350px; /* طول الصورة ليعطي هيبة للعصر */
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.eras-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.8s ease; /* أنيميشن زووم ناعم */
+}
+
+.eras-card-wide:hover .eras-image img {
+    transform: scale(1.1); /* تكبير الصورة عند الوقوف عليها */
+}
+
+/* 4. معلومات العصر (النصوص) */
+.eras-info-box .eras-year {
+    color: #666;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+}
+
+.eras-info-box h3 {
+    color: #f1d5a5;
+    font-size: 2.2rem;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.eras-info-box p {
+    color: #aaa;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-bottom: 35px;
+    padding: 0 30px;
+}
+
+/* 5. زرار "استكشف العصر" الاحترافي */
+.eras-btn-minimal {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #f1d5a5; /* لون ذهبي صريح */
+    color: #000;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.4s;
+    border: 2px solid transparent;
+}
+
+.eras-btn-minimal:hover {
+    background: transparent;
+    color: #f1d5a5;
+    border-color: #f1d5a5;
+    box-shadow: 0 0 20px rgba(241, 213, 165, 0.4);
+    transform: scale(1.05);
+}
+
+.eras-btn-minimal i {
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.eras-btn-minimal:hover i {
+    transform: translateX(-5px); /* سهم الزرار يتحرك لليمين */
+}
+
+/* 6. تحويل الصفحة لعمود واحد في الموبايل */
+@media (max-width: 992px) {
+    .eras-wrapper {
+        grid-template-columns: 1fr; /* كارت واحد في الصف للشاشات الصغيرة */
+        gap: 30px;
+    }
+    
+    .eras-image {
+        height: 250px;
+    }
+}
+/* الزر الجديد العريض والمميز */
+.full-map-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%; /* يأخذ عرض الكارت بالكامل */
+    padding: 12px;
+    margin-top: 15px;
+    background: transparent;
+    border: 1px solid #f1d5a5;
+    color: #f1d5a5;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.4s all ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.full-map-btn i {
+    font-size: 1.2rem;
+}
+
+.full-map-btn:hover {
+    background: #f1d5a5;
+    color: #080808;
+    box-shadow: 0 0 20px rgba(241, 213, 165, 0.4);
+    transform: translateY(-3px); /* حركة خفيفة للأعلى */
+}
+
+/* الناف بار العائم */
+.cyber-nav {
+position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1000px;
+    height: 70px;
+    z-index: 1000;
+    
+    /* الخلطة السرية هنا */
+    background: rgba(10, 10, 10, 0.4); /* شفافية خفيفة جداً للأسود */
+    backdrop-filter: blur(15px) saturate(150%); /* تمويه عالي */
+    -webkit-backdrop-filter: blur(15px) saturate(150%);
+    
+    border: 1px solid rgba(241, 213, 165, 0.3);
+    border-radius: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    transition: all 0.4s ease; /* عشان النقلة تكون ناعمة */
+}
+/* لما الماوس يلمس المنيو أو لما تحب تخليها صلبة يدوياً */
+.cyber-nav:hover {
+    background: rgba(8, 8, 8, 0.95); /* يقلب أسود صلب تقريباً فوق أي حاجة */
+    border-color: #f1d5a5;
+}
+
+/* اللوجو */
+.nav-logo {
+    font-weight: 900;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+}
+
+/* الروابط */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: 0.3s;
+    position: relative;
+    padding: 5px 10px;
+}
+
+/* تأثير الخط الدهبي تحت الكلام */
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #f1d5a5;
+    transition: 0.3s;
+    transform: translateX(-50%);
+}
+
+.nav-item:hover::after, .nav-item.active::after {
+    width: 80%;
+}
+
+.nav-item:hover {
+    color: #f1d5a5;
+}
+
+/* النقطة اللي بتنور في الجنب */
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background: #f1d5a5;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #f1d5a5;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.home-page-title{
+    color: #f1d5a5;
+    width: 100%;             /* يضمن إنه واخد عرض الصفحة كامل */
+    text-align: center;      /* يخلي النص في النص بالظبط */
+    margin: 40px 0;          /* مسافة فوق وتحت العنوان */
+    font-size: 3rem;         /* حجم كبير وواضح */
+    display: block;          /* يضمن إنه واخد سطر لوحده */
+
+}
+
+/* تنسيق شبكة الآثار */
+.artifacts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr)); /* توزيع تلقائي مريح */
+    gap: 30px;
+    padding: 40px 5%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* كارت الأثر */
+.artifact-card {
+    background: #111;
+    border-radius: 20px;
+    border: 1px solid rgba(241, 213, 165, 0.1);
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+
+.artifact-card:hover {
+    transform: translateY(-10px);
+    border-color: #f1d5a5;
+    box-shadow: 0 15px 35px rgba(241, 213, 165, 0.1);
+}
+
+/* صورة الأثر */
+.artifact-img {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.artifact-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* يضمن عدم تمطط الصورة */
+    transition: 0.5s;
+}
+
+.artifact-card:hover .artifact-img img {
+    transform: scale(1.05);
+}
+
+/* شارة ذهبية صغيرة فوق الصورة */
+.artifact-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #f1d5a5;
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* معلومات الأثر */
+.artifact-info {
+    padding: 25px;
+    text-align: right;
+}
+
+.artifact-info h3 {
+    color: #f1d5a5;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.artifact-info p {
+    color: #bbb;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* العنوان التمهيدي */
+.era-intro {
+    padding-top: 90px !important; /* زق المحتوى لتحت عشان يبعد عن الـ Nav */
+    text-align: center;
+    color: #eeec84;
+    font-size: 1.1rem;
+    margin-top: -30px;
+    margin-bottom: 30px;
+}
+/* زرار العصور غير المكتملة */
+.view-more-btn-locked {
+    width: 100%;
+    padding: 15px;
+    background: #080808;
+    color: #444; /* لون باهت */
+    border: 1px solid rgba(241, 213, 165, 0.1);
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: not-allowed;
+    text-align: center;
+    transition: 0.3s;
+}
+
+/* الكارت لما يكون غير متاح */
+.artifact-card:has(.view-more-btn-locked) {
+    opacity: 0.8;
+    filter: grayscale(0.3);
+}
+
+.artifact-card:has(.view-more-btn-locked):hover {
+    filter: grayscale(0);
+    opacity: 1;
+    border-color: rgba(241, 213, 165, 0.3);
+}
+.state-card {
+    background: #1a1a1a;
+    border: 1px solid #f1d5a5; /* اللون الذهبي */
+    padding: 40px 20px;
+    border-radius: 15px;
+    transition: all 0.4s ease;
+    cursor: default;
+}
+
+/* تأثير عند مرور الماوس */
+.state-card:hover {
+    transform: translateY(-10px);
+    background: #f1d5a5; /* يقلب ذهبي */
+    box-shadow: 0 10px 30px rgba(241, 213, 165, 0.3);
+}
+
+.state-card li {
+    font-size: 7rem;
+    color: #f1d5a5;
+    margin-bottom: 20px;
+}
+
+.state-card:hover i, 
+.state-card:hover .stat-number, 
+.state-card:hover .stat-desc {
+    color: #000; /* يقلب أسود لما الخلفية تبقى ذهبي */
+}

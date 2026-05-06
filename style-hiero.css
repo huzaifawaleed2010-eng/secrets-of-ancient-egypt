@@ -1,0 +1,132 @@
+/* تنسيق الصفحة العام - Cyber Style */
+.cyber-page {
+    background-color: #050505;
+    background-image: radial-gradient(#111 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.writer-container {
+    background: rgba(10, 10, 10, 0.9);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(241, 213, 165, 0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+}
+
+.gold-gradient {
+    background: linear-gradient(to right, #f1d5a5, #d4af37);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #888;
+    margin-bottom: 20px;
+}
+
+#englishInput {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 30px;
+    background: #000;
+    border: 2px solid #333;
+    border-radius: 8px;
+    color: #f1d5a5;
+    font-size: 1.1rem;
+    text-align: center;
+    outline: none;
+    transition: 0.3s;
+}
+
+#englishInput:focus {
+    border-color: #f1d5a5;
+    box-shadow: 0 0 10px rgba(241, 213, 165, 0.3);
+}
+
+/* === تصميم الخرطوش الملكي (Cartouche) === */
+.cartouche-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* === تعديل محتوى الخرطوش للترتيب الرأسي === */
+.hiero-content {
+    background: #000;
+    min-height: 200px; /* زودنا الارتفاع الأدنى لأن الترتيب رأسي */
+    padding: 30px 15px; /* عكسنا الـ padding عشان يبقى واسع طولياً */
+    border-radius: 60px; /* جعل الأطراف دائرية جداً (شكل الخرطوش) */
+    border: 5px solid #d4af37; /* حد ذهبي سميك */
+    border-bottom: 15px solid #d4af37; /* قاعدة الخرطوش السميكة */
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3), inset 0 0 10px rgba(212, 175, 55, 0.2);
+    
+    /* السحر هنا: الترتيب رأسي */
+    display: flex;
+    flex-direction: column; /* يرص العناصر في عمود فوق بعضها */
+    
+    justify-content: center; /* يوسط العمود كله جوه الخرطوش */
+    align-items: center;    /* يوسط كل حرف جوه العمود */
+    gap: 10px;              /* مسافة بين كل حرف واللي تحته */
+    
+    min-width: 120px;       /* الخرطوش بقى أرفع لأنه عمودي */
+    transition: all 0.3s ease;
+}
+
+/* === تنسيق صور الرموز داخل الخرطوش الرأسي === */
+.hiero-char {
+    height: 60px; /* ارتفاع مناسب للحرف عشان العمود ميبقاش طويل جداً */
+    width: auto;
+    object-fit: contain;
+    
+    /* الفلتر الذهبي الفخم بتاعنا */
+    filter: sepia(100%) saturate(300%) brightness(110%) hue-rotate(5deg) drop-shadow(0 0 2px rgba(0,0,0,0.5));
+    
+    /* أنيميشن fadeIn بس من اليمين للشمال خفيف */
+    animation: fadeInHieroVertical 0.4s ease-out;
+}
+
+@keyframes fadeInHieroVertical {
+    from { opacity: 0; transform: translateX(10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* === تنسيق النص المؤقت (البلاتشولدر) === */
+.placeholder-text {
+    color: #444;
+    font-size: 1.2rem;
+    writing-mode: vertical-rl; /* يخلي النص المؤقت عمودي برضه */
+    text-orientation: upright;
+}
+/* === تنسيق زرار العودة للرئيسية (الستايل القديم) === */
+.cyber-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: #000;
+    color: #f1d5a5;
+    text-decoration: none;
+    border: 1px solid #f1d5a5;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.cyber-btn:hover {
+    background: #f1d5a5;
+    color: #000;
+    box-shadow: 0 0 15px rgba(241, 213, 165, 0.5);
+}

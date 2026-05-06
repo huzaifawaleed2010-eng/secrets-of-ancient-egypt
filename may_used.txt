@@ -1,0 +1,37 @@
+        <nav class="navbar">
+    <div class="container">
+        <button class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <div class="logo">أسرار مصر القديمة</div>
+        <ul class="nav-links" id="nav-list">
+            <li><a href="الرئيسية.html">الرئيسية</a></li>
+            <li><a href="العصر العتيق.html">العصر العتيق</a></li>
+            <li><a href="عصر الدولة القديمة.html">الدولة القديمة</a></li>
+            <li><a href="عصر الدولة الوسطى.html">الدولة الوسطى</a></li>
+            <li><a href="عصر الدولة الحديثة.html">الدولة الحديثة</a></li>
+            <li><a href="عصر الانتقال الثالث.html">عصر الانتقال الثالث</a></li>
+            <li><a href="العصر المتأخر.html">العصر المتأخر</a></li>
+            <li><a href="عنا.html">عن المطور</a></li>  
+
+        </ul>
+    </div>
+</nav> 
+
+        <header>
+        <h1>أسرار مصر القديمة</h1>
+        <nav>
+            <ul>
+                <li><a href="الرئيسية.html">الرئيسية</a></li>
+                <li><a href="العصر العتيق.html">العصر العتيق</a></li>
+                <li><a href="عصر الدولة القديمة.html">الدولة القديمة</a></li>
+                <li><a href="عصر الدولة الوسطى.html">الدولة الوسطى</a></li>
+                <li><a href="عصر الدولة الحديثة.html">الدولة الحديثة</a></li>
+                <li><a href="عصر الانتقال الثالث.html">عصر الانتقال الثالث</a></li>
+                <li><a href="العصر المتأخر.html">العصر المتأخر</a></li>
+                <li><a href="عنا.html">عنا</a></li>
+            </ul>
+        </nav>
+    </header> 
