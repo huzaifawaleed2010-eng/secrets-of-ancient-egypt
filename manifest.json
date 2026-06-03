@@ -1,0 +1,16 @@
+{
+  "short_name": "الفراعنة",
+  "name": "أسرار مصر القديمة",
+  "icons": [
+    {
+      "src": "photo/logo (1).jpg",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/الرئيسية.html",
+  "background_color": "#1a1a1a",
+  "theme_color": "#dbb04a",
+  "display": "standalone",
+  "orientation": "portrait"
+}
